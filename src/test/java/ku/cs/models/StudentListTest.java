@@ -34,4 +34,20 @@ class StudentListTest {
     }
 
 
+    @Test
+    @DisplayName("Test view grade by id")
+    void testViewGradeById() {
+        student.addNewStudent("6610xxxxxx", "Jay1");
+        student.giveScoreToId("6610xxxxxx",80);
+        assertEquals("A", student.findStudentById("6610xxxxxx").grade());
+    }
+
+    @Test
+    @DisplayName("Test get students")
+    void testGetStudents() {
+        student.addNewStudent("6610xxxxxx", "Jay1");
+        assertEquals("Jay1", student.getStudents().get(0).getName());
+    }
+
+
 }
